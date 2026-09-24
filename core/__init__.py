@@ -1,0 +1,1 @@
+"""Pacote core: toda a lógica de processamento de raster, sem dependência de Qt."""

@@ -1,0 +1,61 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="globeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0f1f33"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Globo / grid base -->
+  <circle cx="200" cy="200" r="150" fill="url(#globeGrad)" stroke="#0a1622" stroke-width="3"/>
+
+  <!-- Linhas de grid (longitude) -->
+  <ellipse cx="200" cy="200" rx="60" ry="150" fill="none" stroke="#3b82f6" stroke-width="2.5" opacity="0.55"/>
+  <ellipse cx="200" cy="200" rx="110" ry="150" fill="none" stroke="#3b82f6" stroke-width="2.5" opacity="0.4"/>
+  <ellipse cx="200" cy="200" rx="150" ry="150" fill="none" stroke="#3b82f6" stroke-width="2.5" opacity="0.25"/>
+
+  <!-- Linhas de grid (latitude) -->
+  <ellipse cx="200" cy="200" rx="150" ry="40" fill="none" stroke="#3b82f6" stroke-width="2.5" opacity="0.55"/>
+  <ellipse cx="200" cy="200" rx="150" ry="90" fill="none" stroke="#3b82f6" stroke-width="2.5" opacity="0.4"/>
+  <line x1="50" y1="200" x2="350" y2="200" stroke="#3b82f6" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- Máscara para recortar o histograma dentro do círculo -->
+  <clipPath id="globeClip">
+    <circle cx="200" cy="200" r="150"/>
+  </clipPath>
+
+  <!-- Barras de histograma equalizado, dentro do globo -->
+  <g clip-path="url(#globeClip)">
+    <rect x="120" y="240" width="14" height="60" fill="url(#barGrad)" opacity="0.9"/>
+    <rect x="140" y="210" width="14" height="90" fill="url(#barGrad)" opacity="0.9"/>
+    <rect x="160" y="180" width="14" height="120" fill="url(#barGrad)" opacity="0.9"/>
+    <rect x="180" y="150" width="14" height="150" fill="url(#barGrad)" opacity="0.95"/>
+    <rect x="200" y="165" width="14" height="135" fill="url(#barGrad)" opacity="0.95"/>
+    <rect x="220" y="195" width="14" height="105" fill="url(#barGrad)" opacity="0.9"/>
+    <rect x="240" y="225" width="14" height="75" fill="url(#barGrad)" opacity="0.9"/>
+    <rect x="260" y="255" width="14" height="45" fill="url(#barGrad)" opacity="0.85"/>
+  </g>
+
+  <!-- Anel externo (lente / foco) -->
+  <circle cx="200" cy="200" r="150" fill="none" stroke="#2dd4bf" stroke-width="5"/>
+  <circle cx="200" cy="200" r="165" fill="none" stroke="#2dd4bf" stroke-width="2" opacity="0.4"/>
+
+  <!-- Seta de equalização (curva ascendente, estilo correção tonal) -->
+  <path d="M 90 290 Q 150 290 175 230 Q 200 165 240 140 Q 280 120 320 110"
+        fill="none" stroke="url(#arrowGrad)" stroke-width="9" stroke-linecap="round"/>
+  <!-- Ponta da seta -->
+  <path d="M 320 110 L 300 100 M 320 110 L 308 130"
+        fill="none" stroke="url(#arrowGrad)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Pontos de controle na curva, lembrando ajuste de curva tonal -->
+  <circle cx="175" cy="230" r="7" fill="#ffffff" stroke="#f97316" stroke-width="3"/>
+  <circle cx="240" cy="140" r="7" fill="#ffffff" stroke="#f97316" stroke-width="3"/>
+</svg>

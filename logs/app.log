@@ -1,0 +1,48 @@
+2026-06-24 12:05:36,581 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 12:10:32,433 | INFO     | core.raster_io | Raster aberto: ORTOMOSAICO_CABOLEDO.tif (159211x259743, 1 bandas, dtype=uint8, crs=EPSG:32733)
+2026-06-24 12:10:32,438 | WARNING  | rasterio._err | CPLE_NotSupported:Resampling method not supported on paletted band. Falling back to nearest neighbour
+2026-06-24 12:17:16,273 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 12:17:22,938 | INFO     | core.raster_io | Raster aberto: ORTOMOSAICO_CABOLEDO.tif (159211x259743, 1 bandas, dtype=uint8, crs=EPSG:32733)
+2026-06-24 12:17:22,941 | WARNING  | rasterio._err | CPLE_NotSupported:Resampling method not supported on paletted band. Falling back to nearest neighbour
+2026-06-24 12:25:58,530 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 12:26:10,542 | INFO     | core.raster_io | Raster aberto: ORTOMOSAICO_CABOLEDO.tif (159211x259743, 1 bandas, dtype=uint8, crs=EPSG:32733, paleta=True)
+2026-06-24 12:26:10,545 | WARNING  | rasterio._err | CPLE_NotSupported:Resampling method not supported on paletted band. Falling back to nearest neighbour
+2026-06-24 12:26:56,682 | ERROR    | app.ui.main_window | Erro ao inicializar painéis após abrir imagem
+Traceback (most recent call last):
+  File "C:\Users\flavio\Documents\flavio2\PESSOAL\F_S_Capital\Empresas\FS-Geotecnologias\PROJETOS\Geoequalize\app\ui\main_window.py", line 364, in _load_image
+    self._recompute_preview()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\flavio\Documents\flavio2\PESSOAL\F_S_Capital\Empresas\FS-Geotecnologias\PROJETOS\Geoequalize\app\ui\main_window.py", line 698, in _recompute_preview
+    self._refresh_viewer(original_rgb)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\flavio\Documents\flavio2\PESSOAL\F_S_Capital\Empresas\FS-Geotecnologias\PROJETOS\Geoequalize\app\ui\main_window.py", line 716, in _refresh_viewer
+    self.viewer.set_array_as_image(self._preview_corrected, colormap=colormap)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ImageViewer.set_array_as_image() got an unexpected keyword argument 'colormap'
+2026-06-24 12:29:20,669 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 12:29:27,646 | INFO     | core.raster_io | Raster aberto: ORTOMOSAICO_CABOLEDO.tif (159211x259743, 1 bandas, dtype=uint8, crs=EPSG:32733, paleta=True)
+2026-06-24 12:29:27,648 | WARNING  | rasterio._err | CPLE_NotSupported:Resampling method not supported on paletted band. Falling back to nearest neighbour
+2026-06-24 12:38:55,976 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 12:39:08,137 | INFO     | core.raster_io | Raster aberto: ORTOMOSAICO_CABOLEDO.tif (159211x259743, 1 bandas, dtype=uint8, crs=EPSG:32733, paleta=True)
+2026-06-24 12:39:08,139 | WARNING  | rasterio._err | CPLE_NotSupported:Resampling method not supported on paletted band. Falling back to nearest neighbour
+2026-06-24 14:40:39,565 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 14:41:30,912 | INFO     | core.raster_io | Raster aberto: ORTOMOSAICO_CABOLEDO.tif (159211x259743, 1 bandas, dtype=uint8, crs=EPSG:32733, paleta=True)
+2026-06-24 14:41:30,914 | WARNING  | rasterio._err | CPLE_NotSupported:Resampling method not supported on paletted band. Falling back to nearest neighbour
+2026-06-24 16:22:46,483 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 16:28:23,217 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 16:29:15,175 | INFO     | core.raster_io | Raster aberto: ORTOMOSAICO_CABOLEDO.tif (159211x259743, 1 bandas, dtype=uint8, crs=EPSG:32733, paleta=True)
+2026-06-24 16:29:15,177 | WARNING  | rasterio._err | CPLE_NotSupported:Resampling method not supported on paletted band. Falling back to nearest neighbour
+2026-06-24 16:39:48,745 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 16:39:59,951 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 16:50:37,900 | INFO     | utils.logging | Logging inicializado.
+2026-06-24 16:52:09,924 | INFO     | utils.logging | Logging inicializado.
+2026-06-26 11:56:14,565 | INFO     | utils.logging | Logging inicializado.
+2026-06-26 11:56:26,558 | INFO     | core.raster_io | Raster aberto: imagem_teste.tif (4864x3648, 3 bandas, dtype=uint8, crs=None, paleta=False)
+2026-06-26 12:10:01,213 | INFO     | utils.logging | Logging inicializado.
+2026-06-26 12:10:46,248 | INFO     | core.raster_io | Raster aberto: imagem_teste.tif (4864x3648, 3 bandas, dtype=uint8, crs=None, paleta=False)
+2026-06-26 12:27:43,129 | INFO     | utils.logging | Logging inicializado.
+2026-06-26 13:19:54,135 | INFO     | core.raster_io | Raster aberto: imagem_teste.tif (4864x3648, 3 bandas, dtype=uint8, crs=None, paleta=False)
+2026-06-26 13:33:57,794 | INFO     | utils.logging | Logging inicializado.
+2026-06-26 13:34:25,841 | INFO     | core.raster_io | Raster aberto: imagem_teste.tif (4864x3648, 3 bandas, dtype=uint8, crs=None, paleta=False)
+2026-06-26 13:41:49,300 | INFO     | utils.logging | Logging inicializado.
+2026-06-26 13:42:08,102 | INFO     | core.raster_io | Raster aberto: imagem_teste.tif (4864x3648, 3 bandas, dtype=uint8, crs=None, paleta=False)

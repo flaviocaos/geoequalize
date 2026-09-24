@@ -1,0 +1,1 @@
+"""Subpacote com todos os componentes de interface gráfica (Qt widgets)."""
