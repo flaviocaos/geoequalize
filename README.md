@@ -1,96 +1,208 @@
-# Satellite Image Corrector
+# 🛰️ GeoEqualize
 
-Aplicativo desktop para processamento visual e radiométrico de imagens
-de satélite, drones e ortofotos. Suporta GeoTIFF, TIFF, JPEG, PNG e JP2.
+**Aplicativo desktop para processamento visual, radiométrico e geoespacial de imagens de satélite, drones e ortofotos.**
 
-## Status do projeto
+Suporta GeoTIFF, TIFF, JPEG, PNG e JP2, preservando o georreferenciamento (CRS, transform, NoData) do início ao fim.
 
-✅ Todas as 9 fases planejadas foram implementadas.
+![Versão](https://img.shields.io/badge/versão-1.0.0-blue)
+![Plataforma](https://img.shields.io/badge/plataforma-Windows%2010%20%7C%2011-lightgrey)
+![Python](https://img.shields.io/badge/python-3.10%2B-yellow)
+![Interface](https://img.shields.io/badge/interface-PySide6-green)
 
-## Funcionalidades
+---
 
-- **Visualização**: zoom, pan, ajuste à tela, leitura de metadados geoespaciais (CRS, transform, bounds, NoData, driver, compressão).
-- **Histograma e contraste**: stretch linear/percentil/desvio padrão, normalização, equalização, CLAHE, gamma, brilho/contraste — com histograma antes/depois e estatísticas por banda.
-- **Cor**: balanceamento Gray World/White Patch, ponto de referência (branco/cinza/preto), ajuste de canais RGB, temperatura, matiz/saturação, sombras/médios/realces, redução de dominância de cor, correção de vinheta e iluminação desigual, realces por classe (urbano/vegetação/solo/estradas).
-- **Correções locais**: seleção retangular/poligonal, feather de borda, aplicação restrita à área selecionada, com histórico de desfazer/refazer.
-- **Multibanda**: composição RGB customizável, presets de falsa-cor, estatísticas avançadas por banda (variância, contagem de NoData).
-- **Exportação**: GeoTIFF/TIFF/PNG/JPEG preservando CRS/transform/NoData, processamento em blocos para arquivos grandes, relatório de processamento em TXT.
-- **Projeto**: salvar/abrir projeto (JSON), histórico editável (ativar/desativar/remover/reordenar operações), presets prontos e personalizados, processamento em lote (batch).
-- **Filtros avançados**: sharpening, unsharp mask, redução de ruído, redução de haze, controle de sombras/altas luzes, harmonização de ortomosaico, matching de histograma (entre imagens ou por região).
+## 📥 Download
 
-## Requisitos
+A forma mais simples de usar o GeoEqualize é baixar o executável pronto, sem precisar instalar Python nem dependências.
 
-- Python 3.10+
-- Ver `requirements.txt`
-- GDAL (recomenda-se conda-forge no Windows — ver nota em requirements.txt)
+👉 **[Baixar a versão mais recente](https://github.com/flaviocaos/geoequalize/releases/latest)**
 
-## Instalação
+1. Baixe o arquivo `GeoEqualize-v1.0-Windows.zip`
+2. Clique com o botão direito no arquivo → **Extrair Tudo...** e escolha uma pasta
+3. Abra a pasta extraída e clique duas vezes em `GeoEqualize.exe`
 
-```bash
+> ⚠️ **Importante:** não execute o `GeoEqualize.exe` direto de dentro do `.zip`. Extraia a pasta inteira primeiro; o executável depende dos arquivos da pasta `_internal`.
+
+> ℹ️ **Aviso do Windows:** na primeira execução, o Windows SmartScreen pode exibir "O Windows protegeu o computador", porque o executável ainda não possui assinatura digital. Clique em **Mais informações → Executar assim mesmo**.
+
+---
+
+## ✨ Funcionalidades
+
+### 🖼️ Visualização e metadados
+- Zoom, pan e ajuste à tela
+- Leitura de metadados geoespaciais: CRS, transform, bounds, NoData, driver e compressão
+- Perfil espectral de pixels
+
+### 📊 Histograma e contraste
+- Stretch linear, por percentil e por desvio padrão
+- Normalização, equalização, CLAHE, gamma, brilho e contraste
+- Histograma antes/depois e estatísticas por banda
+
+### 🎨 Cor
+- Balanceamento Gray World e White Patch
+- Ponto de referência (branco, cinza ou preto)
+- Ajuste de canais RGB, temperatura, matiz e saturação
+- Sombras, médios e realces
+- Redução de dominância de cor
+- Correção de vinheta e de iluminação desigual
+- Realces por classe (urbano, vegetação, solo, estradas)
+
+### ✂️ Correções locais
+- Seleção retangular ou poligonal com feather de borda
+- Aplicação restrita à área selecionada
+- Desfazer/refazer
+
+### 🌈 Multibanda
+- Composição RGB customizável
+- Presets de falsa-cor
+- Estatísticas avançadas por banda (variância, contagem de NoData)
+
+### 🛰️ Sensoriamento Remoto
+- Índices espectrais: NDVI, NDWI, SAVI e EVI
+- Band math (álgebra de bandas)
+- Correção atmosférica por Dark Object Subtraction (DOS)
+
+### 🗺️ Geoprocessamento
+- Reclassificação
+- Análise multicritério (MCDA)
+- Modelagem de mudanças com CA-Markov
+- Classificação não supervisionada com K-Means
+
+### 🔧 Filtros avançados
+- Sharpening e unsharp mask
+- Redução de ruído e de haze
+- Controle de sombras e altas luzes
+- Harmonização de ortomosaico
+- Matching de histograma (entre imagens ou por região)
+
+### 🤖 Agente local de IA
+- Assistente de IA integrado ao aplicativo, executado localmente
+
+### 📄 Relatórios e exportação
+- Exportação em GeoTIFF, TIFF, PNG e JPEG preservando CRS, transform e NoData
+- Processamento em blocos para arquivos grandes
+- Relatórios em PDF bilíngues (português/inglês)
+- Relatório de processamento em TXT
+
+### 💾 Projetos e produtividade
+- Salvar e abrir projetos (JSON)
+- Histórico editável: ativar, desativar, remover e reordenar operações
+- Presets prontos e personalizados
+- Processamento em lote (batch)
+
+---
+
+## 🚀 Como usar
+
+1. **Abrir uma imagem:** menu **Arquivo → Abrir imagem...** e selecione um GeoTIFF, TIFF, JPEG, PNG ou JP2.
+2. **Selecionar bandas:** no painel **Bandas**, ajuste os índices R/G/B ou escolha um preset de composição (cor natural, falsa-cor, vegetação etc.) e clique em **Aplicar composição**.
+3. **Aplicar correções:**
+   - **Histograma:** escolha um método (stretch, CLAHE, gamma...), ajuste os parâmetros e clique em **Aplicar**.
+   - **Cor:** balanceamento de branco, canais, temperatura, saturação, redução de dominância de cor.
+   - **Avançado:** sharpening, redução de ruído, redução de haze, harmonização de ortomosaico.
+4. **Correção local:** aba **Local** → escolha **Retangular** ou **Poligonal** → desenhe a seleção → ajuste o feather → clique em **Aplicar correção local**.
+5. **Gerenciar histórico:** o painel **Projeto** mostra todas as operações aplicadas; é possível desativar, remover ou reordenar (▲▼) cada uma.
+6. **Exportar:** menu **Arquivo → Exportar...** → escolha formato, caminho e se deseja apenas a composição RGB ou todas as bandas.
+7. **Projetos e presets:** no painel **Projeto**, salve ou abra projetos `.json`, carregue presets prontos ou salve os seus.
+8. **Processamento em lote:** painel **Projeto → Processar várias imagens...** → adicione os arquivos e escolha a pasta de saída; o pipeline atual é aplicado a todas.
+
+---
+
+## 🧑‍💻 Executar a partir do código-fonte
+
+### Requisitos
+- Python 3.10 ou superior
+- Dependências listadas em `requirements.txt`
+- GDAL (no Windows, recomenda-se instalar via conda-forge; veja a nota em `requirements.txt`)
+
+### Instalação
+
+```powershell
+git clone https://github.com/flaviocaos/geoequalize.git
+cd geoequalize
 python -m venv venv
-venv\Scripts\activate          # Windows
+venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Como executar
+### Executar
 
-```bash
+```powershell
 python -m app.main
 ```
 
-## Como usar
+### Testes
 
-1. **Abrir uma imagem**: menu *Arquivo → Abrir imagem...* e selecione um GeoTIFF, TIFF, JPEG, PNG ou JP2.
-2. **Selecionar bandas**: no painel *Bandas* (direita), ajuste os índices R/G/B ou escolha um preset de composição (cor natural, falsa-cor, vegetação, etc.) e clique em *Aplicar composição*.
-3. **Aplicar correções**:
-   - Aba *Histograma*: escolha um método (stretch, CLAHE, gamma...), ajuste os parâmetros e clique em *Aplicar*.
-   - Aba *Cor*: balanceamento de branco, canais, temperatura, saturação, redução de dominância de cor.
-   - Aba *Avançado*: sharpening, redução de ruído, redução de haze, harmonização de ortomosaico.
-4. **Aplicar correção local**: aba *Local* → escolha "Retangular" ou "Poligonal" → desenhe a seleção na imagem → ajuste o feather → escolha se usa o método configurado na aba Histograma ou Cor → clique em *Aplicar correção local*.
-5. **Gerenciar histórico**: painel *Projeto* (esquerda) mostra todas as operações aplicadas; você pode desativar (checkbox), remover ou reordenar (▲▼) qualquer uma.
-6. **Exportar GeoTIFF**: menu *Arquivo → Exportar...* → escolha formato, caminho e se quer só a composição RGB ou todas as bandas → acompanhe a barra de progresso.
-7. **Salvar/abrir projeto**: painel *Projeto* → *Salvar projeto* (gera um `.json` com tudo) ou *Abrir projeto* para continuar depois.
-8. **Presets**: escolha um preset pronto no combo do painel *Projeto* e clique em *Carregar preset*, ou salve sua própria combinação de correções com *Salvar como preset*.
-9. **Processamento em lote**: painel *Projeto → Processar várias imagens...* → adicione arquivos, escolha pasta de saída → o pipeline atual é aplicado a todas.
+```powershell
+pip install pytest
+pytest
+```
 
-## Limitações conhecidas
+### Gerar o executável (Windows)
 
-- As correções da aba "Avançado" (redução de haze, harmonização de ortomosaico, etc.) são heurísticas visuais, **não substituem correção atmosférica científica** calibrada radiometricamente.
-- Os presets de composição de bandas (Fase 5) assumem ordens de banda genéricas; sempre confira/ajuste manualmente conforme o sensor real (Sentinel-2, Landsat, drone, etc.).
-- A leitura de preview é sempre reduzida (configurável em `utils/config.py`, `preview_max_dim`); a exportação em resolução total relê o arquivo original diretamente, podendo ser mais lenta para arquivos muito grandes.
-- O matching de histograma por região depende de duas seleções manuais sucessivas (referência → destino); não há detecção automática de blocos de ortomosaico.
-- JP2 (JPEG2000) depende do suporte do GDAL instalado; alguns ambientes Windows podem precisar de drivers adicionais.
+O empacotamento é feito com PyInstaller a partir do arquivo `GeoEqualize.spec`:
 
-## Próximos passos (ideias de evolução futura)
+```powershell
+pip install pyinstaller
+pyinstaller GeoEqualize.spec --noconfirm
+```
 
-- Suporte a mais formatos de exportação (COG — Cloud Optimized GeoTIFF).
-- Detecção automática de faixas de voo em ortomosaicos para harmonização sem seleção manual.
-- Correção atmosférica científica opcional (ex.: Dark Object Subtraction, 6S).
-- Pré-visualização em GPU para acelerar CLAHE/filtros em imagens grandes.
-- Suporte a anotações/vetores sobre a imagem (shapefile, GeoJSON).
+O resultado fica em `dist\GeoEqualize\`. Para o passo a passo completo, veja [`EMPACOTAMENTO.md`](EMPACOTAMENTO.md).
 
-## Estrutura do projeto
+> 💡 Instale o PyInstaller **dentro do venv** do projeto. Se o venv for criado em outra pasta e o projeto for movido, recrie o venv no novo caminho, pois ele guarda caminhos absolutos.
+
+---
+
+## 📁 Estrutura do projeto
 
 ```
-satellite_image_corrector/
+geoequalize/
 ├── app/
-│   ├── main.py
-│   └── ui/              # Todos os painéis e diálogos (PySide6)
-├── core/                 # Lógica de processamento (sem dependência de Qt)
-├── utils/                # Logging, configuração, validações
-├── tests/                # Testes automatizados (pytest)
+│   ├── main.py              # Ponto de entrada
+│   └── ui/                  # Interface (PySide6): janela principal, painéis e diálogos
+├── core/                    # Lógica de processamento (sem dependência de Qt)
+├── utils/                   # Logging, configuração e validações
+├── assets/                  # Recursos visuais
+├── tests/                   # Testes automatizados (pytest)
+├── GeoEqualize.spec         # Configuração do PyInstaller
+├── EMPACOTAMENTO.md         # Guia de empacotamento para Windows
 ├── requirements.txt
 ├── pytest.ini
 └── README.md
 ```
 
-## Testes
+As pastas `build/`, `dist/`, `logs/` e `venv/` são geradas localmente e não devem ser versionadas.
 
-```bash
-pip install pytest
-pytest
-```
+---
 
-## Empacotamento Windows
+## ⚠️ Limitações conhecidas
 
-Ver seção dedicada `EMPACOTAMENTO.md` (ou a seção equivalente neste documento gerada na Fase 9) para o passo a passo completo com PyInstaller.
+- As correções da aba **Avançado** (redução de haze, harmonização de ortomosaico etc.) são heurísticas visuais e não substituem uma correção atmosférica com calibração radiométrica completa.
+- Os presets de composição de bandas assumem ordens de banda genéricas; confira e ajuste conforme o sensor real (Sentinel-2, Landsat, drone etc.).
+- A pré-visualização é feita em resolução reduzida (configurável em `utils/config.py`, `preview_max_dim`); a exportação em resolução total relê o arquivo original e pode ser mais lenta em arquivos muito grandes.
+- O matching de histograma por região depende de duas seleções manuais sucessivas (referência → destino).
+- O suporte a JP2 (JPEG2000) depende dos drivers do GDAL instalado.
+- O executável ainda não possui assinatura digital (ver aviso do SmartScreen acima).
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] **Detecção de objetos com YOLOv8** (edificações, pivôs, veículos e outros alvos em imagens aéreas)
+- [ ] Ícone próprio no executável
+- [ ] Instalador para Windows (atalhos no menu Iniciar, sem necessidade de extrair zip)
+- [ ] Assinatura digital do executável
+- [ ] Exportação em COG (Cloud Optimized GeoTIFF)
+- [ ] Detecção automática de faixas de voo para harmonização de ortomosaicos
+- [ ] Correção atmosférica avançada (ex.: 6S)
+- [ ] Pré-visualização acelerada por GPU para filtros em imagens grandes
+- [ ] Suporte a vetores sobre a imagem (Shapefile, GeoJSON)
+
+---
+
+## 👤 Autor
+
+Desenvolvido por **Flavio Silva** — **FS Geotecnologias**
+
+Sugestões, bugs e ideias: abra uma [Issue](https://github.com/flaviocaos/geoequalize/issues).
