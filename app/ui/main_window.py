@@ -207,7 +207,7 @@ class MainWindow(QMainWindow):
         self._queried_band_statistics: dict[int, dict] = {}
         self._agent_dialog: Optional[AgentDialog] = None
 
-        self.setWindowTitle("Satellite Image Corrector")
+        self.setWindowTitle("GeoEqualize")
         self.resize(1400, 900)
 
         self._build_central_widget()
